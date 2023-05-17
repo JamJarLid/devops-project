@@ -7,10 +7,5 @@ export default function Home() {
 
   return <>
     <h2>ADOVEO DevOps Team</h2>
-    {s.movies.map(({ title, path }) => <div className="movie">
-      <Link to={path}>
-        <h3>{title}</h3>
-      </Link>
-    </div>)}
   </>
 }

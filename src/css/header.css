@@ -6,7 +6,18 @@ header {
 
 header h1 {
   margin: 0;
-  display: inline-flex;
+  display: inline;
+}
+
+.header-logo {
+  width: 125px;
+}
+
+.header-logo img{
+  width: 120px;
+  height: 27.59px;
+  left: 160px;
+  top: calc(50% - 27.59px/2 - 2.51px);
 }
 
 header a {
@@ -15,9 +26,8 @@ header a {
   font-weight: 600; 
   font-size: 16px;
   line-height: 24px;
-  display: inline-flex;
-  align-items: center;
-  color: #FFFFFF;
+  display: inline;
+  text-decoration: none;
 }
 
 header a:first-of-type {

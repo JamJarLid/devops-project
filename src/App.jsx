@@ -10,20 +10,19 @@ import {
 } from 'react-router-dom';
 import Home from './Home';
 import Menu from './Menu.jsx';
-
+import Header from './Header.jsx'
 
 export default function App() {
 
   const s = useStates('main', {
     menu: [
-      { label: 'Start page', path: '/', Component: Home },
+      { path: '/', Component: Home },
     ],
-    movies: []
   });
 
   return <BrowserRouter>
     <header>
-      <h1>ADOVEO</h1>
+      <Header/>
       <Menu/>
     </header>
     <main>

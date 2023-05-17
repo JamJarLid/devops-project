@@ -23,7 +23,7 @@ export default function App() {
 
   return <BrowserRouter>
     <header>
-      <h1>Adoveo Devops Team</h1>
+      <h1>ADOVEO</h1>
       <Menu/>
     </header>
     <main>

@@ -1,0 +1,34 @@
+header {
+  background-color: #193546;
+  color: white;
+  height: 87px;
+}
+
+header h1 {
+  margin: 0;
+  display: inline-flex;
+}
+
+header a {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600; 
+  font-size: 16px;
+  line-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+header a:first-of-type {
+  padding-left: 0;
+}
+
+header .active {
+  color: rgba(84, 230, 198, 1);
+}
+
+header a:hover {
+  color: rgba(84, 230, 198, 1);
+  transition: 0.3s ease-in-out;
+}

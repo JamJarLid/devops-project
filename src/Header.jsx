@@ -3,13 +3,13 @@ import Navbar from "./Navbar";
 
 export default function Home() {
   return (
-    <nav>
+    <div>
       <Link to="/">
         <div className="header-logo">
           <img src="/images/adoveo-logo.png"></img>
         </div>
       </Link>
       <Navbar />
-    </nav>
+    </div>
   );
 }

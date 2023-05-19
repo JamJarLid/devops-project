@@ -9,21 +9,23 @@ import {
   Route
 } from 'react-router-dom';
 import Home from './Home';
-import Menu from './Menu.jsx';
 import Header from './Header.jsx'
+import AboutUs from './AboutUs.jsx'
+import News from './News.jsx';
 
 export default function App() {
 
   const s = useStates('main', {
     menu: [
       { path: '/', Component: Home },
+      { label: 'OM OSS', path: '/om-oss', Component: AboutUs },
+      { label: 'NYHETER', path: '/nyheter', Component: News },
     ],
   });
 
   return <BrowserRouter>
     <header>
       <Header/>
-      <Menu/>
     </header>
     <main>
       <Routes>

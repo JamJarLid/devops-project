@@ -1,15 +1,16 @@
 /* change to your own choice of fonts */
-@import url('https://fonts.googleapis.com/css2?family=Arima:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
 @import 'normalize.css';
+@import 'header.css';
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Arima';
-  font-size: 20px;
+  font-family: 'Poppins';
+  font-size: 16px;
 }
 
 main {
@@ -17,40 +18,3 @@ main {
   margin: 0 auto;
 }
 
-header {
-  background-color: darkred;
-  color: white;
-  padding: 30px 40px;
-}
-
-header h1 {
-  margin: 0;
-}
-
-header a {
-  display: inline-block;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: rgb(176, 176, 176);
-}
-
-header a:first-of-type{
-  padding-left: 0;
-}
-
-header .active{
-  color: white;
-}
-
-header a:hover{
-  color: white;
-}
-
-.movie {
-  border: 1px solid black;
-  padding: 20px;
-}
-
-.movie h3 {
-  text-align: center;
-}

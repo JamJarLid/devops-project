@@ -9,22 +9,23 @@ import {
   Route
 } from 'react-router-dom';
 import Home from './Home';
-import Menu from './Menu.jsx';
-
+import Header from './Header.jsx'
+import AboutUs from './AboutUs.jsx'
+import News from './News.jsx';
 
 export default function App() {
 
   const s = useStates('main', {
     menu: [
-      { label: 'Start page', path: '/', Component: Home },
+      { path: '/', Component: Home },
+      { label: 'OM OSS', path: '/om-oss', Component: AboutUs },
+      { label: 'NYHETER', path: '/nyheter', Component: News },
     ],
-    movies: []
   });
 
   return <BrowserRouter>
     <header>
-      <h1>Adoveo Devops Team</h1>
-      <Menu/>
+      <Header/>
     </header>
     <main>
       <Routes>

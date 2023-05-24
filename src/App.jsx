@@ -9,12 +9,7 @@ import {
   Route
 } from 'react-router-dom';
 import Home from './Home';
-import Menu from './Menu.jsx';
 import Footer from './Footer.jsx';
-
-
-
-
 import Header from './Header.jsx'
 import AboutUs from './AboutUs.jsx'
 import News from './News.jsx';

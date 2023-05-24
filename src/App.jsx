@@ -9,6 +9,7 @@ import {
   Route
 } from 'react-router-dom';
 import Home from './Home';
+import Footer from './Footer.jsx';
 import Header from './Header.jsx'
 import AboutUs from './AboutUs.jsx'
 import News from './News.jsx';
@@ -34,6 +35,6 @@ export default function App() {
         )}
       </Routes>
     </main>
-    <footer></footer>
+    <Footer/>
   </BrowserRouter>;
 }

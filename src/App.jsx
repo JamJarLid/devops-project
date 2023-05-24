@@ -10,6 +10,10 @@ import {
 } from 'react-router-dom';
 import Home from './Home';
 import Menu from './Menu.jsx';
+import Footer from './Footer.jsx';
+
+
+
 
 
 export default function App() {
@@ -33,6 +37,6 @@ export default function App() {
         )}
       </Routes>
     </main>
-    <footer></footer>
+    <Footer/>
   </BrowserRouter>;
 }

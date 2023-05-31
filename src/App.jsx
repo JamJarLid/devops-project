@@ -1,7 +1,6 @@
 // useful hooks, comment these in, when needed:
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { kebabify } from './utilities/kebabify.js';
 import { useStates } from './utilities/states.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';

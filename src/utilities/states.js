@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 // Simplify states, contexts and binding to forms
 // ironboy 2022
 

@@ -1,13 +1,13 @@
-import { useStates } from './utilities/states';
+import { useState } from 'react';
 
 export default function AboutUs() {
-  const s = useStates('main');
+  const s = useState('main');
 
   return (
     <>
       <h2>ADOVEO DevOps Team</h2>
       <h2>Möt teamet</h2>
-      <div class="Simon">
+      <div className="Simon">
         <div>
           <p>Hej, jag heter Simon.</p>
         </div>
@@ -16,7 +16,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div class="Espen">
+      <div className="Espen">
         <div>
           <p>Hej, jag heter Espen.</p>
         </div>
@@ -25,7 +25,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div class="Harisha">
+      <div className="Harisha">
         <div>
           <p>Hej, jag heter Harisha.</p>
         </div>

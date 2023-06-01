@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import { useStates } from './utilities/states';
 import { NavLink } from 'react-router-dom';
 

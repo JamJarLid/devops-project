@@ -4,20 +4,20 @@
 // if not possible, uses the array index instead
 
 // ONLY INCLUDE ONCE!
-// (for example in your App component 
+// (for example in your App component
 //  or even earlier - in main.jsx)
 
 let ap = Array.prototype;
 if (!ap._mapNoAutoKey) {
-  let org = ap._mapNoAutoKey = ap.map;
+  let org = (ap._mapNoAutoKey = ap.map);
   ap.map = function (...args) {
     // get ids/unique keys
-    let ids = org.call(this, (x, i) => x ? (x.id || x._id || i) : i);
+    let ids = org.call(this, (x, i) => (x ? x.id || x._id || i : i));
     // apply map
     let result = org.apply(this, args);
     // patches with key if React element
-    return org.call(result, x =>
+    return org.call(result, (x) =>
       x && x.$$typeof && x.key === null ? { ...x, key: ids.shift() } : x
     );
-  }
+  };
 }

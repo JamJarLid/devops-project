@@ -4,9 +4,21 @@
 }
 
 .profile-1 img {
+  float: left;
+  margin-right: 20px;
+  margin-top: 10px;
   height: 100px;
   background-color: white;
   border-radius: 50%;
+}
+
+.profile-1 h2 {
+  display:flex;
+  margin-bottom: 5px;
+}
+
+.profile-1 h3 {
+  display: inline;
 }
 
 .profile-2 {
@@ -18,7 +30,18 @@
 
 .profile-2 img {
   height: 100px;
-  align-items: flex-end;
+  float: right;
+  margin-top: 10px;
+  margin-left: 20px;
   background-color: white;
   border-radius: 50%;
+}
+
+.profile-2 h2 {
+  display:flex;
+  margin-bottom: 5px;
+}
+
+.profile-2 h3 {
+  display: inline;
 }

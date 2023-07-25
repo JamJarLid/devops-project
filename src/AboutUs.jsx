@@ -30,7 +30,7 @@ export default function AboutUs() {
       </div>
 
       <div className="profile-1">
-        <img class="profile-pfp"></img>
+        <img src="images/profile picture.png"></img>
         <h2 class="profile-name">Simon</h2>
         <h3 class="profile-title">Lead Backend</h3>
         <p>

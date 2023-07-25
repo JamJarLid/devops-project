@@ -1,0 +1,24 @@
+.profile-1 {
+  height: fit-content;
+  width: 100%;
+}
+
+.profile-1 img {
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.profile-2 {
+  height: fit-content;
+  width: 100%;
+  background-color: #193546;
+  color: white;
+}
+
+.profile-2 img {
+  height: 100px;
+  align-items: flex-end;
+  background-color: white;
+  border-radius: 50%;
+}

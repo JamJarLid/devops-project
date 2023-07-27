@@ -1,0 +1,19 @@
+.news-feed {
+
+}
+
+.news-article {
+  position: relative;
+  padding: 20px;
+  box-shadow: 1px 1px 30px rgba(0 0 0 /.1);
+}
+
+.news-article h2{
+  margin-top: 5px;
+}
+
+.news-date {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+}

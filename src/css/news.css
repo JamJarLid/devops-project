@@ -10,21 +10,29 @@
 }
 
 .news-article {
-  padding: 20px;
+  padding: 10px;
   background-color: whitesmoke;
   box-shadow: 1px 1px 30px rgba(25, 53, 70, 0.3);
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  width: 70%;
 }
 
 .news-article h2 {
+  font-size: 20px;
   margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .news-ingress {
   color: rgb(75, 75, 75);
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+.news-date {
+  font-size: 12px;
 }
 
 @media (min-width: 768px) {

@@ -23,12 +23,16 @@
   border-radius: 50%;
 }
 
-.profile-1 h2 {
+.profile-1 .profile-2 h2 {
   margin-bottom: 0;
 }
 
-.profile-1 h3 {
+.profile-1 .profile-2 h3 {
   margin-top: 10px;
+}
+
+.profile-description {
+  font-size: 13px;
 }
 
 .profile-2 {
@@ -49,14 +53,6 @@
   border-radius: 50%;
 }
 
-.profile-2 h2 {
-  margin-bottom: 0;
-}
-
-.profile-2 h3 {
-  margin-top: 10px;
-}
-
 @media (min-width: 768px) {
   .profile-list{
     display: flex;
@@ -70,7 +66,7 @@
 
   .profile-1, .profile-2 {
     width: 300px;
-    height: 500px;
+    height: 425px;
   }
 }
 

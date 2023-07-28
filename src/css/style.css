@@ -1,9 +1,10 @@
 /* change to your own choice of fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @import 'normalize.css';
 @import 'header.css';
 @import 'footer.css';
+@import 'about-us.css';
 
 * {
   box-sizing: border-box;
@@ -15,43 +16,5 @@ body {
 }
 
 main {
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 100%;
 }
-.Simon {
-  display: flex;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  color: blue;
-  float: left;
-}
-
-.Simon p {
-  color: black;
-}
-
-.Espen  {
-  display: flex;
-  margin-bottom: 50px;
-  color: blue;
-  float: left;
-}
-
-.Espen p {
-  color: black;
-}
-
-.Harisha {
-  display: flex;
-  margin-bottom: 50px;
-  color: blue;
-  float: left;
-}
-
-.Harisha p {
-  color: black;
-}
-
-
-
-

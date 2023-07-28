@@ -1,0 +1,85 @@
+.profile-list{
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 100px;
+}
+.team-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.profile-1 {
+  padding: 30px;
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.profile-1 img {
+  width: 120px;
+  border-radius: 50%;
+}
+
+.profile-1 h2 {
+  margin-bottom: 0;
+}
+
+.profile-1 h3 {
+  margin-top: 10px;
+}
+
+.profile-1 p {
+}
+
+.profile-2 {
+  padding: 30px;
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
+  background-color: #193546;
+  color: white;
+}
+
+.profile-2 img {
+  width: 120px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.profile-2 h2 {
+  margin-bottom: 0;
+}
+
+.profile-2 h3 {
+  margin-top: 10px;
+}
+.profile-2 p {
+}
+
+@media (min-width: 768px) {
+  .profile-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1024px;
+    padding: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profile-1, .profile-2 {
+    width: 300px;
+    height: 500px;
+  }
+}
+
+@media (min-width: 1336px){
+  .profile-1, .profile-2 {
+    width: 320px;
+  }
+}

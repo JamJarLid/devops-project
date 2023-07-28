@@ -5,11 +5,17 @@
 .news-article {
   position: relative;
   padding: 20px;
-  box-shadow: 1px 1px 30px rgba(0 0 0 /.1);
+  border: 1px solid rgba(25, 53, 70, 1);
+  box-shadow: 1px 1px 30px rgba(25, 53, 70, 0.3);
+  width: 100%;
 }
 
-.news-article h2{
+.news-article h2 {
   margin-top: 5px;
+}
+
+.news-ingress {
+  
 }
 
 .news-date {

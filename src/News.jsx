@@ -9,8 +9,8 @@ export default function News() {
       <h1 class="news-title">News</h1>
 
       <div class="news-feed">
-        
         <div class="news-article">
+          <img src="/images/news-stock-img.jpg"></img>
           <h2>News Title</h2>
           <p class="news-ingress">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
@@ -20,6 +20,7 @@ export default function News() {
         </div>
 
         <div class="news-article">
+          <img src="/images/news-stock-img.jpg"></img>
           <h2>News Title</h2>
           <p class="news-ingress">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, animi.

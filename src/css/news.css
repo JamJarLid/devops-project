@@ -1,13 +1,22 @@
 .news-feed {
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 100px;
+}
 
+.news-title {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .news-article {
-  position: relative;
   padding: 20px;
-  border: 1px solid rgba(25, 53, 70, 1);
+  background-color: whitesmoke;
   box-shadow: 1px 1px 30px rgba(25, 53, 70, 0.3);
-  width: 100%;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
 }
 
 .news-article h2 {
@@ -15,11 +24,27 @@
 }
 
 .news-ingress {
-  
+  color: rgb(75, 75, 75);
 }
 
-.news-date {
-  position: absolute;
-  top: 10px;
-  right: 30px;
+@media (min-width: 768px) {
+  .news-feed{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1024px;
+    padding: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .news-article {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1336px){
+  .news-article {
+    width: 320px;
+  }
 }

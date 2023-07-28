@@ -5,18 +5,25 @@ export default function News() {
 
   return (
     <>
-      <h2>ADOVEO DevOps Team</h2>
-      <h2>News</h2>
+      <h1 class="news-title">ADOVEO DevOps Team</h1>
+      <h1 class="news-title">News</h1>
       <div class="news-feed">
         <div class="news-article">
           <h2>News Title</h2>
-          <div class="news-date">
-            <p>2023-07-27</p>
-          </div>
           <p class="news-ingress">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
-            facere?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            voluptas omnis ipsa accusantium esse temporibus.
           </p>
+          <small>2023-07-27</small>
+        </div>
+
+        <div class="news-article">
+          <h2>News Title</h2>
+          <p class="news-ingress">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+            voluptas omnis ipsa accusantium esse temporibus.
+          </p>
+          <small>2023-07-27</small>
         </div>
       </div>
     </>

@@ -5,8 +5,8 @@ export default function AboutUs() {
 
   return (
     <>
-      <h2 class="team-title">ADOVEO DevOps Team</h2>
-      <h2 class="team-title">Möt teamet</h2>
+      <h1 class="team-title">ADOVEO DevOps Team</h1>
+      <h1 class="team-title">Möt teamet</h1>
       <div class="profile-list">
         <div class="profile-1">
           <img src="images/profile picture.png"></img>

@@ -27,6 +27,16 @@ export default function News() {
           </p>
           <small class="news-date">2023-07-27</small>
         </div>
+
+        <div class="news-article">
+          <img src="/images/news-stock-img.jpg"></img>
+          <h2>News Title</h2>
+          <p class="news-ingress">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
+            sunt?
+          </p>
+          <small class="news-date">2023-07-27</small>
+        </div>
       </div>
     </>
   );

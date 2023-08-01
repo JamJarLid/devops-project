@@ -46,7 +46,9 @@ export default function AboutUs() {
         <div className="profile-2">
           <img src="images/profile picture.png"></img>
           <h2 className="profile-name">Andréa Bolin*</h2>
-          <h3 className="profile-title">Lead Cloud Engineer/ Security Co-lead</h3>
+          <h3 className="profile-title">
+            Lead Cloud Engineer/ Security Co-lead
+          </h3>
           <p className="profile-description">
             Responsible for the Deployment of the project into the cloud
             service. Working closely together with Christoffer to deploy the

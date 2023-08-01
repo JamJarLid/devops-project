@@ -4,6 +4,12 @@
   margin-bottom: 100px;
 }
 
+.article-link {
+  text-decoration: none;
+  color: black;
+  margin: auto;
+} 
+
 .news-title {
   text-align: center;
   margin-bottom: 40px;

@@ -16,16 +16,16 @@ export default function App() {
       { path: '/', Component: Home },
       { label: 'OM OSS', path: '/om-oss', Component: AboutUs },
       { label: 'NYHETER', path: '/nyheter', Component: News },
-      { path: '/nyheter/:newsPath'}
+      { path: '/nyheter/:newsPath' },
     ],
-    news: []
+    news: [],
   });
 
   useEffect(() => {
     (async () => {
-      let news = await (await fetch("/json/news.json")).json()
+      let news = await (await fetch('/json/news.json')).json();
       for (let article of news) {
-        article.path = "/nyheter/" + kebabify(article.title);
+        article.path = '/nyheter/' + kebabify(article.title);
       }
       s.news = news;
     })();

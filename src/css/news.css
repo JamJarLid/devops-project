@@ -65,3 +65,30 @@
     width: 320px;
   }
 }
+
+.colorful-p {
+  color: rgb(75, 75, 75);
+  font-size: 18px;
+  margin-bottom: 3px;
+  text-align: center;
+}
+
+.Lastest {
+  text-align: center;
+  margin-top: 200px;
+}
+
+.Title-info-home-page {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.Link-news {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.short-info {
+  text-align: center;
+  margin-top: 100px;
+}

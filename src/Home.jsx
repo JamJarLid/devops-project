@@ -9,10 +9,10 @@ export default function Home() {
       <h2>ADOVEO DevOps Team</h2>
 
     <div className="DevOps Team Info">
-      <h2> 
+      <h2 class="Title-info-home-page"> 
         Developers code, but DevOps teams build, automate, operate, and support.
       </h2>
-      <p>
+      <p class="short info">
       DevOps teams are essential for teams to operate on a large scale. 
       Site reliability engineers (SREs) and DevOps engineers build pipelines, 
       configure automation, set up the systems, 
@@ -21,11 +21,12 @@ export default function Home() {
     </div>
 
     <div className='Latest News'>
-      <h2>Here is the latest news regarding ours DevOps Team</h2>
+      <h2 class="Lastest">Here is the latest news regarding ours DevOps Team</h2>
 
-      Insert lastest news here
+      <p class="colorful-p">Here is the latest news regarding our DevOps Team</p>
 
-      <p>For the latest news, <a href="http://localhost:5173/nyheter">click here</a>!</p>
+
+      <p class="Link-news">For the latest news, <a href="http://localhost:5173/nyheter">click here</a>!</p>
 
 
     </div>

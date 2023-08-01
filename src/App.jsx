@@ -8,6 +8,7 @@ import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 import AboutUs from './AboutUs.jsx';
 import News from './News.jsx';
+import { kebabify } from './utilities/kebabify.js';
 
 export default function App() {
   const s = useStates('main', {
@@ -15,8 +16,20 @@ export default function App() {
       { path: '/', Component: Home },
       { label: 'OM OSS', path: '/om-oss', Component: AboutUs },
       { label: 'NYHETER', path: '/nyheter', Component: News },
+      { path: '/nyheter/:newsPath'}
     ],
+    news: []
   });
+
+  useEffect(() => {
+    (async () => {
+      let news = await (await fetch("/json/news.json")).json()
+      for (let article of news) {
+        article.path = "/nyheter/" + kebabify(article.title);
+      }
+      s.news = news;
+    })();
+  }, []);
 
   return (
     <BrowserRouter>

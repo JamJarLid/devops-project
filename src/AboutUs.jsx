@@ -5,7 +5,6 @@ export default function AboutUs() {
 
   return (
     <>
-      <h1 class="team-title">ADOVEO DevOps Team</h1>
       <h1 class="team-title">Möt teamet</h1>
       <div class="profile-list">
         <div class="profile-1">

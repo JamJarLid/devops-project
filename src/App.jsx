@@ -8,7 +8,7 @@ import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 import AboutUs from './AboutUs.jsx';
 import News from './News.jsx';
-import Calendar from './calendar/Calendar.jsx'
+import Calendar from './calendar/Calendar.jsx';
 import { kebabify } from './utilities/kebabify.js';
 
 export default function App() {
@@ -37,7 +37,7 @@ export default function App() {
     <BrowserRouter>
       <header>
         <Header />
-        <Calendar/>
+        <Calendar />
       </header>
       <main>
         <Routes>

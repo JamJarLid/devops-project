@@ -8,7 +8,7 @@ import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 import AboutUs from './AboutUs.jsx';
 import News from './News.jsx';
-import Calendar from './calendar/calendar.jsx';
+import Calendar from './calendar/Calendar.jsx'
 
 export default function App() {
   const s = useStates('main', {
@@ -24,6 +24,7 @@ export default function App() {
     <BrowserRouter>
       <header>
         <Header />
+        <Calendar/>
       </header>
       <main>
         <Routes>

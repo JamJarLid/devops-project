@@ -16,7 +16,7 @@ export default function App() {
       { path: '/', Component: Home },
       { label: 'OM OSS', path: '/om-oss', Component: AboutUs },
       { label: 'NYHETER', path: '/nyheter', Component: News },
-      { label: 'calendar', path: '/calendar', Component: Calendar},
+      { label: 'calendar', path: '/calendar', Component: Calendar },
     ],
   });
 

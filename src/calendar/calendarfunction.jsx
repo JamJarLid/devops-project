@@ -1,20 +1,11 @@
 import React from 'react';
 
 function calendarFunction() {
+  function viewCalendar() {}
 
-	function viewCalendar() {
+  function changeMonth() {}
 
-	}
-
-	function changeMonth() {
-
-	}
-
-	return (
-		<div>
-
-		</div>
-	);
+  return <div></div>;
 }
 
 export default calendarFunction;

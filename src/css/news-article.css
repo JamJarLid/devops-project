@@ -6,6 +6,9 @@
 
 .article-title {
   text-align: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .article-date {
@@ -21,7 +24,7 @@
 }
 
 @media (min-width: 1336px) {
-  .article-content{
+  .article-content {
     width: 60%;
   }
 }

@@ -9,12 +9,13 @@
 }
 .profile-1 {
   padding: 30px;
+  background-color: whitesmoke;
   box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  width: 100%;
+  width: 90%;
 }
 
 .profile-1 img {
@@ -22,15 +23,16 @@
   border-radius: 50%;
 }
 
-.profile-1 h2 {
+.profile-1 .profile-2 h2 {
   margin-bottom: 0;
 }
 
-.profile-1 h3 {
+.profile-1 .profile-2 h3 {
   margin-top: 10px;
 }
 
-.profile-1 p {
+.profile-description {
+  font-size: 13px;
 }
 
 .profile-2 {
@@ -40,7 +42,7 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  width: 100%;
+  width: 90%;
   background-color: #193546;
   color: white;
 }
@@ -49,16 +51,6 @@
   width: 120px;
   background-color: white;
   border-radius: 50%;
-}
-
-.profile-2 h2 {
-  margin-bottom: 0;
-}
-
-.profile-2 h3 {
-  margin-top: 10px;
-}
-.profile-2 p {
 }
 
 @media (min-width: 768px) {
@@ -74,7 +66,7 @@
 
   .profile-1, .profile-2 {
     width: 300px;
-    height: 500px;
+    height: 425px;
   }
 }
 

@@ -5,6 +5,7 @@
 @import 'header.css';
 @import 'footer.css';
 @import 'about-us.css';
+@import 'news.css';
 
 
 * {
@@ -14,6 +15,7 @@
 body {
   font-family: 'Poppins';
   font-size: 16px;
+  background-color: whitesmoke;
 }
 
 main {

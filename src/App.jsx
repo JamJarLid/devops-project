@@ -37,7 +37,6 @@ export default function App() {
     <BrowserRouter>
       <header>
         <Header />
-        
       </header>
       <main>
         <Routes>

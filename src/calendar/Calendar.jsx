@@ -5,7 +5,7 @@ const calendar = () => {
   const [date, setDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState();
   const [tasks, setTasks] = useState([]);
-  const [taskInput, setTaskInput] = useState("");
+  const [taskInput, setTaskInput] = useState('');
 
   const setPrevMonth = () => {
     fixDate((prevDate) => {
@@ -33,36 +33,36 @@ const calendar = () => {
 
   const handleDateClick = (day) => {
     setSelectedDate(day);
-    document.getElementById("addTasks").style.display = "None";
-};
+    document.getElementById('addTasks').style.display = 'None';
+  };
 
-const addTodo = (date, taskList) => {
-    setTasks(prevTasks => [...prevTasks, { date, tasks: taskList }]);
-    document.getElementById("addTasks").style.display = "inline-block";
-};
+  const addTodo = (date, taskList) => {
+    setTasks((prevTasks) => [...prevTasks, { date, tasks: taskList }]);
+    document.getElementById('addTasks').style.display = 'inline-block';
+  };
 
-const getTasksForDate = (date) => {
-    const task = tasks.find(task => task.date === date);
+  const getTasksForDate = (date) => {
+    const task = tasks.find((task) => task.date === date);
     return task ? task.tasks : [];
-};
+  };
 
-const addTask = () => {
-    if (taskInput.trim() !== "" && selectedDate) {
-        const dateFull = selectedDate;
-        const taskList = getTasksForDate(dateFull);
-        const updatedTaskList = [...taskList, taskInput];
+  const addTask = () => {
+    if (taskInput.trim() !== '' && selectedDate) {
+      const dateFull = selectedDate;
+      const taskList = getTasksForDate(dateFull);
+      const updatedTaskList = [...taskList, taskInput];
 
-        const updatedTasks = tasks.map(task => {
-            if (task.date === dateFull) {
-                return { date: dateFull, tasks: updatedTaskList };
-            }
-            return task;
-        });
+      const updatedTasks = tasks.map((task) => {
+        if (task.date === dateFull) {
+          return { date: dateFull, tasks: updatedTaskList };
+        }
+        return task;
+      });
 
-        setTasks(updatedTasks);
-        setTaskInput("");
+      setTasks(updatedTasks);
+      setTaskInput('');
     }
-};
+  };
 
   const months = [
     'January',
@@ -148,4 +148,4 @@ const addTask = () => {
   );
 };
 
-export default calendar
+export default calendar;

@@ -19,7 +19,7 @@ export default function App() {
       { label: 'OM OSS', path: '/om-oss', Component: AboutUs },
       { label: 'NYHETER', path: '/nyheter', Component: News },
       { label: 'CALENDAR', path: '/calendar', Component: Calendar },
-      { path: '/nyheter/:newsPath' },
+      { path: '/nyheter/:newsPath', Component: NewsArticle },
     ],
     news: [],
   });

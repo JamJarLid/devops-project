@@ -8,7 +8,7 @@ import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 import AboutUs from './AboutUs.jsx';
 import News from './News.jsx';
-import Calendar from './calendar/Calendar.jsx'
+import Calendar from './calendar/Calendar.jsx';
 
 export default function App() {
   const s = useStates('main', {
@@ -16,7 +16,7 @@ export default function App() {
       { path: '/', Component: Home },
       { label: 'OM OSS', path: '/om-oss', Component: AboutUs },
       { label: 'NYHETER', path: '/nyheter', Component: News },
-      { label: 'calendar', path: '/calendar', Component: Calendar },
+      { label: 'CALENDAR', path: '/calendar', Component: Calendar },
     ],
   });
 
@@ -24,7 +24,7 @@ export default function App() {
     <BrowserRouter>
       <header>
         <Header />
-        <Calendar/>
+        
       </header>
       <main>
         <Routes>

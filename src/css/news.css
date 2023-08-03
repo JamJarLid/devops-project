@@ -81,10 +81,9 @@
 }
 
 .text-box {
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
+  background-color: whitesmoke;
+  border: 1px solid whitesmoke;
   padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   width: 70%;
   margin: 20px auto; /* Center the box horizontally and provide margin for spacing */
 }

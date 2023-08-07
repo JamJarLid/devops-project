@@ -38,7 +38,7 @@
 .days {
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
-	background-color: #6a59b3;
+	background-color: rgba(84, 230,198, 1);
 }
 
 .dates {

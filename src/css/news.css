@@ -65,37 +65,3 @@
     width: 320px;
   }
 }
-
-.Lastest {
-  text-align: center;
-  margin-top: 150px;
-}
-
-.Link-news {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.DevOps-Team-Info {
-  text-align: center;
-}
-
-.text-box {
-  background-color: whitesmoke;
-  border: 1px solid whitesmoke;
-  padding: 20px;
-  width: 70%;
-  margin: 20px auto; /* Center the box horizontally and provide margin for spacing */
-}
-
-.Title-info-home-page {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.short.info {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-

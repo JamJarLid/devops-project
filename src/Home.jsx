@@ -13,14 +13,14 @@ export default function Home() {
           Developers code, but DevOps teams build, automate, operate, and support.
         </h2>
         <div class="text-box">
-          <p class="short info">
+          <p class="short-info">
             DevOps teams are essential for teams to operate on a large scale. 
             Site reliability engineers (SREs) and DevOps engineers build pipelines, 
             configure automation, set up the systems, 
             and keep things running so developers can focus on building and implementing code.
-      </p>
-    </div>
-  </div>
+          </p>
+        </div>
+      </div>
 
     <div className='Latest News'>
       <h2 class="Lastest">Here is the latest news regarding our DevOps Team</h2>
@@ -32,12 +32,13 @@ export default function Home() {
         <div class="news-date">2023-07-31</div>
       </div>
 
-      <p class="Link-news">For the latest news, <a href="http://localhost:5173/nyheter">click here</a>!</p>
+      <p class="Link-news">For the latest news, 
+      <a href="http://localhost:5173/nyheter">click here</a>!</p>
 
 
     </div>
 
 
-    </>
+  </>
   );
 }

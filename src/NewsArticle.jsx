@@ -13,7 +13,7 @@ export default function NewsArticle() {
     <>
       <img className="article-picture" src="/images/news-stock-img.jpg" />
       <h1 className="article-title"> {article.title} </h1>
-      <h3 className="article-date"> {article.date}</h3>
+      <p className="article-date"> {article.date}</p>
       <p className="article-content">{article.content}</p>
     </>
   );

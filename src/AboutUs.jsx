@@ -22,10 +22,8 @@ export default function AboutUs() {
           <h2 className="profile-name">Harisha Gajavilli</h2>
           <h3 className="profile-title">Lead Frontend Developer</h3>
           <p className="profile-description">
-            Responsible for the design and development of the front-end features
-            of the application. Frequently in contact with the SCRUM Master and
-            the clients to ensure the product matches the clients’
-            specifications.
+            In charge of front-end design and development. Collaborate with
+            SCRUM Master and clients to meet specifications.
           </p>
         </div>
 
@@ -36,10 +34,8 @@ export default function AboutUs() {
             Lead Backend Developer/ Security Co-lead
           </h3>
           <p className="profile-description">
-            Responsible for the design and development of the backend (API and
-            database structure). Being lead on the API also gives him, in
-            collaboration with Andrea, responsibility for the security of the
-            application.
+            In charge of backend design and development (API and database).
+            Leading API and collaborating with Andrea for application security.
           </p>
         </div>
 
@@ -50,11 +46,9 @@ export default function AboutUs() {
             Lead Cloud Engineer/ Security Co-lead
           </h3>
           <p className="profile-description">
-            Responsible for the Deployment of the project into the cloud
-            service. Working closely together with Christoffer to deploy the
-            project into the cloud server used for the production environment of
-            the application. Also working closely with Simon to ensure security
-            through the cloud deployment.
+            Responsible for cloud deployment of the project. Collaborating with
+            Christoffer for production environment setup. Working with Simon to
+            ensure cloud security.
           </p>
         </div>
 

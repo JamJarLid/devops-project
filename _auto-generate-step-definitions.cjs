@@ -1,6 +1,7 @@
-let featureFolder = './specs';
-let stepDefinitionFolder = './specs/step_definitions';
-let dependenciesForSteps = 'import { Given, When, Then } from ' +
+let featureFolder = './cypress/specs';
+let stepDefinitionFolder = './cypress/specs/step_definitions';
+let dependenciesForSteps =
+  'import { Given, When, Then } from ' +
   '"@badeball/cypress-cucumber-preprocessor";';
 
 const { promisify } = require('util');
@@ -14,15 +15,20 @@ stepDefinitionFolder = join(__dirname, stepDefinitionFolder);
 
 async function getFiles(dir) {
   const subdirs = await readdir(dir);
-  const files = await Promise.all(subdirs.map(async (subdir) => {
-    const res = resolve(dir, subdir);
-    return (await stat(res)).isDirectory() ? getFiles(res) : res;
-  }));
+  const files = await Promise.all(
+    subdirs.map(async (subdir) => {
+      const res = resolve(dir, subdir);
+      return (await stat(res)).isDirectory() ? getFiles(res) : res;
+    })
+  );
   return files.reduce((a, f) => a.concat(f), []);
 }
 
 function toVarName(x) {
-  return x.replace(/\s/g, '').normalize('NFD').replace(/\p{Diacritic}/gu, '');
+  return x
+    .replace(/\s/g, '')
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '');
 }
 
 let allSteps = [];
@@ -36,16 +42,26 @@ function generateSteps(gherkin) {
     line = line.trim();
     let command = line.split(/\s/)[0];
     let rest = line.replace(command, '').trim();
-    if (pseudoCommands.includes(command)) { command = lastCommand; }
+    if (pseudoCommands.includes(command)) {
+      command = lastCommand;
+    }
     lastCommand = command;
     if (commands.includes(command)) {
       // break out strings
       let args = [];
-      rest = rest.replace(/"<[^>]{1,}>"/g, x => args.push(toVarName(x.slice(2, -2))) && '{string}');
-      rest = rest.replace(/"[^"]*"/g, () => (args.push(az.shift() || 'args' + args.length) && '{string}'));
+      rest = rest.replace(
+        /"<[^>]{1,}>"/g,
+        (x) => args.push(toVarName(x.slice(2, -2))) && '{string}'
+      );
+      rest = rest.replace(
+        /"[^"]*"/g,
+        () => args.push(az.shift() || 'args' + args.length) && '{string}'
+      );
       // rest = rest.replace(/\d{1,}/g, () => (args.push(az.shift() || 'args' + args.length) && '{number}'));
-      steps.push(`${command}('${rest}', (${args.join(', ')}) => ` +
-        `{\n  // TODO: implement step\n});`);
+      steps.push(
+        `${command}('${rest}', (${args.join(', ')}) => ` +
+          `{\n  // TODO: implement step\n});`
+      );
     }
   }
   allSteps = [...allSteps, steps];
@@ -53,10 +69,15 @@ function generateSteps(gherkin) {
 }
 
 async function start() {
-  let files = (await getFiles(featureFolder)).filter(x => x.slice(-8) === '.feature');
+  let files = (await getFiles(featureFolder)).filter(
+    (x) => x.slice(-8) === '.feature'
+  );
   for (let file of files) {
     let steps = generateSteps(fs.readFileSync(file, 'utf-8'));
-    let filePath = normalize(stepDefinitionFolder + sep + file.replace(featureFolder, '')).slice(0, -8) + '.js';
+    let filePath =
+      normalize(
+        stepDefinitionFolder + sep + file.replace(featureFolder, '')
+      ).slice(0, -8) + '.js';
     let dirPath = dirname(filePath);
     //{ recursive: true }
     !fs.existsSync(dirPath) && fs.mkdirSync(dirPath, { recursive: true });

@@ -6,6 +6,7 @@
 @import 'footer.css';
 @import 'about-us.css';
 @import 'news.css';
+@import 'home.css';
 
 * {
   box-sizing: border-box;

@@ -10,6 +10,7 @@ import AboutUs from './AboutUs.jsx';
 import News from './News.jsx';
 import Calendar from './calendar/Calendar.jsx';
 import { kebabify } from './utilities/kebabify.js';
+import NewsArticle from './NewsArticle.jsx';
 
 export default function App() {
   const s = useStates('main', {
@@ -18,7 +19,7 @@ export default function App() {
       { label: 'OM OSS', path: '/om-oss', Component: AboutUs },
       { label: 'NYHETER', path: '/nyheter', Component: News },
       { label: 'CALENDAR', path: '/calendar', Component: Calendar },
-      { path: '/nyheter/:newsPath' },
+      { path: '/nyheter/:newsPath', Component: NewsArticle },
     ],
     news: [],
   });

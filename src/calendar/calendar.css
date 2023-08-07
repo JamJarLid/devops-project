@@ -3,7 +3,7 @@
 	width: 100%;
 	flex-wrap: nowrap;
 	justify-content: flex-start;
-	background-color: aqua;
+	background-color: whsl(79, 12%, 58%);
 	align-items: stretch;
 }
 
@@ -17,8 +17,8 @@
 
 .calendarTodo {
 	display: flex;
-	width: 20%;
-	background-color: blue;
+	width: 50%;
+	background-color: rgb(39, 7, 32);
 }
 
 .header {
@@ -31,14 +31,14 @@
 .header button {
 	background: none;
 	border: none;
-	font-size: 18px;
+	font-size: 16px;
 	cursor:pointer;
 }
 
 .days {
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
-	background-color: #ccc;
+	background-color: #6a59b3;
 }
 
 .dates {
@@ -50,7 +50,7 @@
 	font-size: 1.5rem;
 	border:2px solid #000000 ;
 	cursor: pointer;
-	background-color: antiquewhite;
+	background-color: rgb(199, 197, 194);
 	height: 8rem;
 	padding: .3rem;
 }
@@ -59,7 +59,7 @@
 	font-size: 1.5rem;
 	border:2px solid #000000 ;
 	cursor: pointer;
-	background-color: antiquewhite;
+	background-color: rgb(232, 237, 241);
 	height: 8rem;
 	padding: .3rem;
 

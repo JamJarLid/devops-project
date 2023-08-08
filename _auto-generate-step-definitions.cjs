@@ -1,5 +1,5 @@
-let featureFolder = './cypress/specs';
-let stepDefinitionFolder = './cypress/specs/step_definitions';
+let featureFolder = './cypress/e2e';
+let stepDefinitionFolder = './cypress/support/step_definitions';
 let dependenciesForSteps =
   'import { Given, When, Then } from ' +
   '"@badeball/cypress-cucumber-preprocessor";';
@@ -77,7 +77,7 @@ async function start() {
     let filePath =
       normalize(
         stepDefinitionFolder + sep + file.replace(featureFolder, '')
-      ).slice(0, -8) + '.js';
+      ).slice(0, -8) + '.cy.js';
     let dirPath = dirname(filePath);
     //{ recursive: true }
     !fs.existsSync(dirPath) && fs.mkdirSync(dirPath, { recursive: true });

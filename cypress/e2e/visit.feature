@@ -10,5 +10,5 @@ Feature: Visit the different paths of the website
 
     Scenario: Visiting the News page
       When I click on the "NYHETER" label
-      Then I shouldbe redirected to the news page
+      Then I should be redirected to the news page
 

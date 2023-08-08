@@ -8,15 +8,18 @@ import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 import AboutUs from './AboutUs.jsx';
 import News from './News.jsx';
+import Calendar from './calendar/Calendar.jsx';
 import { kebabify } from './utilities/kebabify.js';
+import NewsArticle from './NewsArticle.jsx';
 
 export default function App() {
   const s = useStates('main', {
     menu: [
       { path: '/', Component: Home },
-      { label: 'OM OSS', path: '/om-oss', Component: AboutUs },
-      { label: 'NYHETER', path: '/nyheter', Component: News },
-      { path: '/nyheter/:newsPath' },
+      { label: 'ABOUTUS', path: '/om-oss', Component: AboutUs },
+      { label: 'NEWS', path: '/nyheter', Component: News },
+      { label: 'CALENDAR', path: '/calendar', Component: Calendar },
+      { path: '/nyheter/:newsPath', Component: NewsArticle },
     ],
     news: [],
   });

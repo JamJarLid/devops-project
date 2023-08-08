@@ -6,16 +6,16 @@ export default function News() {
 
   return (
     <>
-      <h1 class="news-title">News</h1>
+      <h1 className="news-title">News</h1>
 
-      <div class="news-feed">
+      <div className="news-feed">
         {s.news.map(({ path, title, date, synopsis }) => (
           <Link className="article-link" to={path}>
-            <div class="news-article">
+            <div className="news-article">
               <img src="/images/news-stock-img.jpg"></img>
               <h2>{title}</h2>
-              <div class="news-ingress">{synopsis}</div>
-              <div class="news-date">{date}</div>
+              <div className="news-ingress">{synopsis}</div>
+              <div className="news-date">{date}</div>
             </div>
           </Link>
         ))}

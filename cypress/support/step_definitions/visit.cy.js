@@ -20,18 +20,37 @@ Then('I should be redirected to the news page', () => {
   cy.url().should('include', '/nyheter');
 });
 
-When('I click on each individual article', () => {
-  // TODO: implement step
+Then('it should contain news articles', () => {
+  cy.get('div.news-article').should('exist');
 });
 
-Then('I should see the content of the articles', () => {
-  // TODO: implement step
-});
+Then(
+  'I should be able to click on each individual article and see the content of the articles',
+  () => {
+    let link_list = [];
+    cy.get('a.article-link')
+      .each((a) => {
+        cy.get(a)
+          .invoke('attr', 'href')
+          .then((href) => {
+            link_list.push(href);
+          });
+      })
+      .then(() => {
+        for (let i = 0; i < link_list.length; i++) {
+          cy.visit(link_list[i]);
+          cy.get('p.article-content').should('exist');
+          cy.wait(500);
+        }
+      });
+  }
+);
 
 When('I go to a non-existent news article', () => {
-  // TODO: implement step
+  cy.visit('/nyheter/no-article');
 });
 
 Then('I should get to an empty page', () => {
-  // TODO: implement step
+  cy.get('header').should('exist');
+  cy.get('p.article-content').should('not.exist');
 });

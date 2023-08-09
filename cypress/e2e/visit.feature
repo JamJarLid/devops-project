@@ -12,11 +12,11 @@ Feature: Visit the different paths of the website
     Scenario: Visiting the News page
         When I click on the "NEWS" label
         Then I should be redirected to the news page
+        And it should contain news articles
 
     Scenario: Visiting the published news article
         When I click on the "NEWS" label
-        And I click on each individual article
-        Then I should see the content of the articles
+        Then I should be able to click on each individual article and see the content of the articles
 
     Scenario: Visiting a non-existent news article
         When I go to a non-existent news article

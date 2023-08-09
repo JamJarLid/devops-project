@@ -16,7 +16,7 @@ export default function App() {
   const s = useStates('main', {
     menu: [
       { path: '/', Component: Home },
-      { label: 'ABOUTUS', path: '/om-oss', Component: AboutUs },
+      { label: 'ABOUT US', path: '/om-oss', Component: AboutUs },
       { label: 'NEWS', path: '/nyheter', Component: News },
       { label: 'CALENDAR', path: '/calendar', Component: Calendar },
       { path: '/nyheter/:newsPath', Component: NewsArticle },

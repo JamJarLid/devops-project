@@ -9,6 +9,9 @@ import Header from './Header.jsx';
 import AboutUs from './AboutUs.jsx';
 import News from './News.jsx';
 import Calendar from './calendar/Calendar.jsx';
+import Todo from './todo/todo.jsx';
+import currentDay from './calendar/currentDay.jsx';
+
 import { kebabify } from './utilities/kebabify.js';
 import NewsArticle from './NewsArticle.jsx';
 
@@ -19,6 +22,7 @@ export default function App() {
       { label: 'ABOUTUS', path: '/om-oss', Component: AboutUs },
       { label: 'NEWS', path: '/nyheter', Component: News },
       { label: 'CALENDAR', path: '/calendar', Component: Calendar },
+      { label: 'TODO', path: '/todo', Component: Todo },
       { path: '/nyheter/:newsPath', Component: NewsArticle },
     ],
     news: [],

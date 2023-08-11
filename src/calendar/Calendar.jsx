@@ -1,63 +1,40 @@
 import React, { useState } from 'react';
 import './calendar.css';
 
-const calendar = () => {
+const Calendar = () => {
   const [date, setDate] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState();
+  const [selectedDate, setSelectedDate] = useState(null);
   const [tasks, setTasks] = useState([]);
   const [taskInput, setTaskInput] = useState('');
 
   const setPrevMonth = () => {
-    fixDate((prevDate) => {
-      let year = prevDate.getFullYear();
-      let month = prevDate.getMonth() - 1;
-      if (month < 0) {
-        month = 11;
-        year -= 1;
-      }
-      return new Date(year, month, 1);
-    });
+    setDate(prevDate => new Date(prevDate.getFullYear(), prevDate.getMonth() - 1, 1));
   };
 
   const setNextMonth = () => {
-    setDate((prevDate) => {
-      let year = prevDate.getFullYear();
-      let month = prevDate.getMonth() + 1;
-      if (month > 11) {
-        month = 0;
-        year += 1;
-      }
-      return new Date(year, month, 1);
-    });
+    setDate(prevDate => new Date(prevDate.getFullYear(), prevDate.getMonth() + 1, 1));
   };
 
-  const handleDateClick = (day) => {
+  const setDateClick = day => {
     setSelectedDate(day);
-    document.getElementById('addTasks').style.display = 'None';
   };
 
   const addTodo = (date, taskList) => {
-    setTasks((prevTasks) => [...prevTasks, { date, tasks: taskList }]);
-    document.getElementById('addTasks').style.display = 'inline-block';
+    setTasks(prevTasks => [...prevTasks, { date, tasks: taskList }]);
   };
 
-  const getTasksForDate = (date) => {
-    const task = tasks.find((task) => task.date === date);
+  const getTasksForDate = date => {
+    const task = tasks.find(task => task.date === date);
     return task ? task.tasks : [];
   };
 
   const addTask = () => {
     if (taskInput.trim() !== '' && selectedDate) {
-      const dateFull = selectedDate;
-      const taskList = getTasksForDate(dateFull);
-      const updatedTaskList = [...taskList, taskInput];
-
-      const updatedTasks = tasks.map((task) => {
-        if (task.date === dateFull) {
-          return { date: dateFull, tasks: updatedTaskList };
-        }
-        return task;
-      });
+      const updatedTasks = tasks.map(task =>
+        task.date === selectedDate
+          ? { date: selectedDate, tasks: [...task.tasks, taskInput] }
+          : task
+      );
 
       setTasks(updatedTasks);
       setTaskInput('');
@@ -78,15 +55,7 @@ const calendar = () => {
     'November',
     'December',
   ];
-  const weekDays = [
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday',
-  ];
+  const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
   const currentMonth = months[date.getMonth()];
   const currentYear = date.getFullYear();
@@ -94,35 +63,36 @@ const calendar = () => {
   const daysInMonth = new Date(currentYear, date.getMonth() + 1, 0).getDate();
   const firstDayOfMonth = new Date(currentYear, date.getMonth(), 1).getDay();
 
-  const hourNow = new Date().getHours();
-  const minuteNow = new Date().getMinutes();
-  const dayNow = new Date().getDay();
-  const dateNow = new Date().getDate();
-  const monthNow = new Date().getMonth() + 1;
-  const yearNow = new Date().getFullYear();
-
   const days = [];
   for (let i = 0; i < firstDayOfMonth; i++) {
     days.push(<div className="empty-day" key={`empty-${i}`}></div>);
   }
   for (let i = 1; i <= daysInMonth; i++) {
+    const dateFull = `${i}${currentMonth}${currentYear}`;
+    const taskList = getTasksForDate(dateFull);
     days.push(
-      <div className="day" key={`day-${i}`}>
-        {i}
+      <div
+        className={`day ${selectedDate === dateFull ? 'selected' : ''}`}
+        key={`day-${i}`}
+        onClick={() => setDateClick(dateFull)}
+      >
+        <div className="day-number">{i}</div>
+        <div className="task-count">{taskList.length}</div>
+        <button onClick={() => addTodo(dateFull, [])}>A</button>
       </div>
     );
   }
 
   return (
-    <div className="calendarContainer">
-      <div className="calendarTodo">
-        <h2>{weekDays[dayNow]}</h2> <br></br>
+    <div className="calendar-container">
+      <div className="calendar-todo">
+        <h2>{weekDays[new Date().getDay()]}</h2>
+        <br />
         <h2>
-          {dateNow}/{months[monthNow]}/{yearNow}
+          {new Date().getDate()}/{months[new Date().getMonth()]}/{new Date().getFullYear()}
         </h2>
         <h2>
-          {' '}
-          {hourNow}:{minuteNow}
+          {new Date().getHours()}:{new Date().getMinutes()}
         </h2>
       </div>
       <div className="calendar">
@@ -134,18 +104,35 @@ const calendar = () => {
           <button onClick={setNextMonth}>&gt;</button>
         </div>
         <div className="days">
-          <div className="weekday">Mon</div>
-          <div className="weekday">Tue</div>
-          <div className="weekday">Wed</div>
-          <div className="weekday">Thu</div>
-          <div className="weekday">Fri</div>
-          <div className="weekday">Sat</div>
-          <div className="weekday">Sun</div>
+          {weekDays.map(day => (
+            <div className="weekday" key={day}>
+              {day}
+            </div>
+          ))}
         </div>
         <div className="dates">{days}</div>
       </div>
+      {selectedDate && (
+        <div className="todo-list">
+          <h3>{selectedDate}</h3>
+          <ul>
+            {getTasksForDate(selectedDate).map((task, index) => (
+              <li key={index}>{task}</li>
+            ))}
+          </ul>
+          <div className="add-task">
+            <input
+              type="text"
+              value={taskInput}
+              onChange={e => setTaskInput(e.target.value)}
+            />
+            <button onClick={addTask}>Add Task</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default calendar;
+export default Calendar;
+

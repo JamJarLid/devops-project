@@ -14,13 +14,13 @@ function addTodo(newTodoList) {
 
 // Function for removing a todo by id
 function removeTodo(id) {
-  todos = todos.filter(todo => todo.id !== id);
+  todos = todos.filter((todo) => todo.id !== id);
   console.log('Todo removed with id:', id);
 }
 
 // Function for updating a todo by id
 function updateTodo(id, newTodoList) {
-  const todoIndex = todos.findIndex(todo => todo.id === id);
+  const todoIndex = todos.findIndex((todo) => todo.id === id);
   if (todoIndex !== -1) {
     todos[todoIndex].list = newTodoList;
     console.log('Todo updated:', todos[todoIndex]);

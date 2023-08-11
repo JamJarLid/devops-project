@@ -10,14 +10,14 @@ function calendarFunction() {
   }
 
   function changeMonth(step) {
-    setSelectedMonth(prevMonth => {
+    setSelectedMonth((prevMonth) => {
       const newMonth = prevMonth + step;
       if (newMonth < 0) {
-        setSelectedYear(prevYear => prevYear - 1);
+        setSelectedYear((prevYear) => prevYear - 1);
         return 11;
       }
       if (newMonth > 11) {
-        setSelectedYear(prevYear => prevYear + 1);
+        setSelectedYear((prevYear) => prevYear + 1);
         return 0;
       }
       return newMonth;
@@ -35,12 +35,9 @@ function calendarFunction() {
         <h3>
           {selectedYear} - {selectedMonth + 1}
         </h3>
-        
       </div>
-      
     </div>
   );
 }
 
 export default calendarFunction;
-

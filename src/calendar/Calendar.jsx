@@ -8,29 +8,33 @@ const Calendar = () => {
   const [taskInput, setTaskInput] = useState('');
 
   const setPrevMonth = () => {
-    setDate(prevDate => new Date(prevDate.getFullYear(), prevDate.getMonth() - 1, 1));
+    setDate(
+      (prevDate) => new Date(prevDate.getFullYear(), prevDate.getMonth() - 1, 1)
+    );
   };
 
   const setNextMonth = () => {
-    setDate(prevDate => new Date(prevDate.getFullYear(), prevDate.getMonth() + 1, 1));
+    setDate(
+      (prevDate) => new Date(prevDate.getFullYear(), prevDate.getMonth() + 1, 1)
+    );
   };
 
-  const setDateClick = day => {
+  const setDateClick = (day) => {
     setSelectedDate(day);
   };
 
   const addTodo = (date, taskList) => {
-    setTasks(prevTasks => [...prevTasks, { date, tasks: taskList }]);
+    setTasks((prevTasks) => [...prevTasks, { date, tasks: taskList }]);
   };
 
-  const getTasksForDate = date => {
-    const task = tasks.find(task => task.date === date);
+  const getTasksForDate = (date) => {
+    const task = tasks.find((task) => task.date === date);
     return task ? task.tasks : [];
   };
 
   const addTask = () => {
     if (taskInput.trim() !== '' && selectedDate) {
-      const updatedTasks = tasks.map(task =>
+      const updatedTasks = tasks.map((task) =>
         task.date === selectedDate
           ? { date: selectedDate, tasks: [...task.tasks, taskInput] }
           : task
@@ -89,7 +93,8 @@ const Calendar = () => {
         <h2>{weekDays[new Date().getDay()]}</h2>
         <br />
         <h2>
-          {new Date().getDate()}/{months[new Date().getMonth()]}/{new Date().getFullYear()}
+          {new Date().getDate()}/{months[new Date().getMonth()]}/
+          {new Date().getFullYear()}
         </h2>
         <h2>
           {new Date().getHours()}:{new Date().getMinutes()}
@@ -104,7 +109,7 @@ const Calendar = () => {
           <button onClick={setNextMonth}>&gt;</button>
         </div>
         <div className="days">
-          {weekDays.map(day => (
+          {weekDays.map((day) => (
             <div className="weekday" key={day}>
               {day}
             </div>
@@ -124,7 +129,7 @@ const Calendar = () => {
             <input
               type="text"
               value={taskInput}
-              onChange={e => setTaskInput(e.target.value)}
+              onChange={(e) => setTaskInput(e.target.value)}
             />
             <button onClick={addTask}>Add Task</button>
           </div>
@@ -135,4 +140,3 @@ const Calendar = () => {
 };
 
 export default Calendar;
-

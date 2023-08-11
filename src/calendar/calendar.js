@@ -6,7 +6,7 @@ const Calendar = () => {
 
   // Function to add a new todo
   const addTodo = (date, task) => {
-    const updatedTasks = tasks.map(taskObj => {
+    const updatedTasks = tasks.map((taskObj) => {
       if (taskObj.date === date) {
         return {
           ...taskObj,
@@ -21,7 +21,7 @@ const Calendar = () => {
 
   // Function to remove a todo
   const removeTodo = (date, taskIndex) => {
-    const updatedTasks = tasks.map(taskObj => {
+    const updatedTasks = tasks.map((taskObj) => {
       if (taskObj.date === date) {
         return {
           ...taskObj,
@@ -36,7 +36,7 @@ const Calendar = () => {
 
   // Function to update a todo
   const updateTodo = (date, taskIndex, updatedTask) => {
-    const updatedTasks = tasks.map(taskObj => {
+    const updatedTasks = tasks.map((taskObj) => {
       if (taskObj.date === date) {
         return {
           ...taskObj,
@@ -55,4 +55,3 @@ const Calendar = () => {
 };
 
 export default Calendar;
-

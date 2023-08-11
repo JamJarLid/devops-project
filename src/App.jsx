@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
-import AboutUs from './AboutUs.jsx';
+import About Us from './AboutUs.jsx';
 import News from './News.jsx';
 import Calendar from './calendar/Calendar.jsx';
 import Todo from './todo/todo.jsx';

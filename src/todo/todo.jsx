@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './todo.css';
 
-export function TodoComponent() {
+export default function TodoComponent() {
   const [todos, setTodos] = useState([]);
 
   function addTodo(newTodoList) {
@@ -54,5 +54,3 @@ export function TodoComponent() {
     </div>
   );
 }
-
-export default TodoComponent;

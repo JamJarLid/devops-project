@@ -38,14 +38,19 @@ export function TodoComponent() {
           <li key={todo.id}>
             {todo.list.join(', ')}
             <button onClick={() => removeTodo(todo.id)}>Remove</button>
-            <button onClick={() => updateTodo(todo.id, ['Updated Task 1', 'Updated Task 2'])}>Update</button>
+            <button
+              onClick={() =>
+                updateTodo(todo.id, ['Updated Task 1', 'Updated Task 2'])
+              }
+            >
+              Update
+            </button>
           </li>
         ))}
       </ul>
-      <button onClick={() => addTodo(['New Task 1', 'New Task 2'])}>Add New Todo</button>
+      <button onClick={() => addTodo(['New Task 1', 'New Task 2'])}>
+        Add New Todo
+      </button>
     </div>
   );
 }
-
-export default TodoComponent;
-

@@ -1,143 +1,163 @@
+/* calendar.css */
 .calendarContainer {
-	display: flex;
-	width: 100%;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-	background-color: whsl(79, 12%, 58%);
-	align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: hsl(79, 12%, 58%);
+  align-items: stretch;
+  padding: 20px;
 }
 
 .calendar {
-	width: 100%;
-	border: 2px solid #ccc;
-	border-radius: 5px;
-	padding: 4% 12%;
-	font-family: 'Poppins';
+  flex: 2;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 4% 8%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
 }
 
 .calendarTodo {
-	display: flex;
-	width: 50%;
-	background-color: #193546;
+  flex: 1;
+  padding: 20px;
+	justify-content: space-between;
+  background-color: #193546;
+  color: #eee;
 }
 
 .header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .header button {
-	background: none;
-	border: none;
-	font-size: 16px;
-	cursor:pointer;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .days {
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
-	background-color: rgba(84, 230,198, 1);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: rgba(84, 230, 198, 1);
+  gap: 10px;
+  padding: 10px 0;
 }
 
 .dates {
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
 }
 
-.empty-day {
-	font-size: 3rem;
-	border:2px solid #000000 ;
-	cursor: pointer;
-	background-color: rgb(199, 197, 194);
-	height: 8rem;
-	padding: .3rem;
-}
-
+.empty-day,
 .day {
-	font-size: 1.5rem;
-	border:2px solid #000000 ;
-	cursor: pointer;
-	background-color: rgb(232, 237, 241);
-	height: 8rem;
-	padding: .3rem;
-
+  font-size: 1.5rem;
+  border: 2px solid #000000;
+  cursor: pointer;
+  height: 8rem;
+  padding: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
 }
 
-.weekDay {
-	text-align: center;
-	font-size: 1.5rem;
-	border:2px solid #000000;
-	cursor: pointer;
-	background-color: antiquewhite;
-	height: 3rem;
-	padding: .3rem;
-}
-
+.empty-day:hover,
 .day:hover {
-	background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
-h2 {
-	font-size: 2rem;
+.empty-day.selected,
+.day.selected {
+  background-color: #4caf50;
+  color: #fff;
 }
 
-.calendarTodo {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-top: 2%;
-	color: rgb(235, 233, 233);
+.task-count {
+  font-size: 14px;
+  color: #777;
+  margin-top: 5px;
 }
 
+.todo-list {
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.add-task {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-task button {
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-task button:hover {
+  background-color: #45a049;
+}
+
+/* Media Queries */
 @media screen and (min-width: 811px) and (max-width: 1080px) {
-	.calendar {
-		padding: 3% 6%;
-	}
+  .calendar {
+    padding: 3% 6%;
+  }
 
-	.calendarTodo h2 {
-		font-size: 2 rem;
-	}
+  .calendarTodo h2 {
+    font-size: 2rem;
+  }
 
-	.day {
-		height: 6rem;
-	}
-
-	.empty-day {
-		height: 6rem;
-	}
+  .day,
+  .empty-day {
+    height: 6rem;
+  }
 }
 
 @media screen and (max-width: 810px) {
-	.calendarContainer {
-		flex-direction: column-reverse;
-		align-items: center;
-	}
+  .calendarContainer {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 
-	.calendar {
-		height: min-content;
-	}
+  .calendar {
+    width: 100%;
+    padding: 3% 6%;
+    margin-bottom: 20px;
+  }
 
-	.calendarTodo {
-		width: 100%;
-		height: min-content;
-		font-size: 1.5rem;
-	}
-.calendarTodo h2 {
-	font-size: 1.5rem;
-}
+  .calendarTodo {
+    width: 100%;
+    padding: 3% 6%;
+  }
 
-.weekday {
-	font-size: 0.9rem;
-}
+  .calendarTodo h2 {
+    font-size: 1.5rem;
+  }
 
-.day {
-	height:5rem;
-}
+  .weekday {
+    font-size: 0.9rem;
+  }
 
-.empty-day {
-	height: 5rem;
-}
-
+  .day,
+  .empty-day {
+    height: 5rem;
+  }
 }

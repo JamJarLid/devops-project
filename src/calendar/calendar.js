@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './calendar.css';
 
 const Calendar = () => {
-  // ... (rest of the code)
-
   // Function to add a new todo
   const addTodo = (date, task) => {
     const updatedTasks = tasks.map((taskObj) => {
@@ -50,8 +48,6 @@ const Calendar = () => {
 
     setTasks(updatedTasks);
   };
-
-  // ... (rest of the code)
 };
 
 export default Calendar;

@@ -9,18 +9,18 @@ export function TodoComponent() {
       id: Date.now(),
       list: newTodoList,
     };
-    setTodos(prevTodos => [...prevTodos, newTodo]);
+    setTodos((prevTodos) => [...prevTodos, newTodo]);
     console.log('Todo added!', todos);
   }
 
   function removeTodo(id) {
-    const updatedTodos = todos.filter(todo => todo.id !== id);
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
     console.log('Todo removed!', updatedTodos);
   }
 
   function updateTodo(id, newTodoList) {
-    const updatedTodos = todos.map(todo => {
+    const updatedTodos = todos.map((todo) => {
       if (todo.id === id) {
         return { ...todo, list: newTodoList };
       }
@@ -34,7 +34,7 @@ export function TodoComponent() {
     <div>
       <h2>Todos</h2>
       <ul>
-        {todos.map(todo => (
+        {todos.map((todo) => (
           <li key={todo.id}>
             {todo.list.join(', ')}
             <button onClick={() => removeTodo(todo.id)}>Remove</button>

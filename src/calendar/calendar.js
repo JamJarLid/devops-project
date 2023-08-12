@@ -1,10 +1,57 @@
-// Here will be adding the javascript code for the todos.
+import React, { useState } from 'react';
+import './calendar.css';
 
-// here we will be adding the function for adding the todo
-function addTodo() {}
+const Calendar = () => {
+  // ... (rest of the code)
 
-// here we will be removing the todo function
-function removeTodo() {}
+  // Function to add a new todo
+  const addTodo = (date, task) => {
+    const updatedTasks = tasks.map((taskObj) => {
+      if (taskObj.date === date) {
+        return {
+          ...taskObj,
+          tasks: [...taskObj.tasks, task],
+        };
+      }
+      return taskObj;
+    });
 
-// here we will be adding the code for updating the todo function
-function updateTodo() {}
+    setTasks(updatedTasks);
+  };
+
+  // Function to remove a todo
+  const removeTodo = (date, taskIndex) => {
+    const updatedTasks = tasks.map((taskObj) => {
+      if (taskObj.date === date) {
+        return {
+          ...taskObj,
+          tasks: taskObj.tasks.filter((_, index) => index !== taskIndex),
+        };
+      }
+      return taskObj;
+    });
+
+    setTasks(updatedTasks);
+  };
+
+  // Function to update a todo
+  const updateTodo = (date, taskIndex, updatedTask) => {
+    const updatedTasks = tasks.map((taskObj) => {
+      if (taskObj.date === date) {
+        return {
+          ...taskObj,
+          tasks: taskObj.tasks.map((task, index) =>
+            index === taskIndex ? updatedTask : task
+          ),
+        };
+      }
+      return taskObj;
+    });
+
+    setTasks(updatedTasks);
+  };
+
+  // ... (rest of the code)
+};
+
+export default Calendar;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './todo.css';
 
-function TodoComponent({ selectedDate, tasks, setTasks}) {
+function TodoComponent({ selectedDate, tasks, setTasks }) {
   const [todos, setTodos] = useState([]);
 
   function addTodo(newTodoList) {

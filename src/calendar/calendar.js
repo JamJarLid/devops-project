@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './calendar.css';
 
-
 const Calendar = () => {
   // Function to add a new todo
   const addTodo = (date, task) => {

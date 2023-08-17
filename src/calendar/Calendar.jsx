@@ -3,9 +3,6 @@ import './calendar.css';
 import TodoComponent from '../todo/todo.jsx';
 import { initialTodos } from '../todo/todo.js';
 
-
-
-
 const Calendar = () => {
   const [date, setDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
@@ -124,12 +121,12 @@ const Calendar = () => {
       </div>
       {selectedDate && (
         <TodoComponent
-        selectedDate={selectedDate}
-        tasks={tasks}
-        setTasks={setTasks}
+          selectedDate={selectedDate}
+          tasks={tasks}
+          setTasks={setTasks}
         />
       )}
-      {selectedDate && ( 
+      {selectedDate && (
         <div className="todo-list">
           <h3>{selectedDate}</h3>
           <ul>

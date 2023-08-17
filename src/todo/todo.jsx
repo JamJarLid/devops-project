@@ -54,5 +54,3 @@ function TodoComponent({ selectedDate, tasks, setTasks}) {
     </div>
   );
 }
-
-export default TodoComponent;

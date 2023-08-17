@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './todo.css';
 
-export function TodoComponent() {
+function TodoComponent({ selectedDate, tasks, setTasks}) {
   const [todos, setTodos] = useState([]);
 
   function addTodo(newTodoList) {
@@ -34,10 +34,10 @@ export function TodoComponent() {
     <div>
       <h2>Todos</h2>
       <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>
-            {todo.list.join(', ')}
-            <button onClick={() => removeTodo(todo.id)}>Remove</button>
+        {todos.map((taskObj) => (
+          <li key={taskObj.id}>
+            {taskObj.list.join(', ')}
+            <button onClick={() => removeTodo(taskObj.id)}>Remove</button>
             <button
               onClick={() =>
                 updateTodo(todo.id, ['Updated Task 1', 'Updated Task 2'])

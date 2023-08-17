@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './calendar.css';
+import TodoComponent from '../todo/todo.jsx';
+import { initialTodos } from '../todo/todo.js';
 
 const Calendar = () => {
   const [date, setDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState([...initialTodos]);
   const [taskInput, setTaskInput] = useState('');
 
   const setPrevMonth = () => {
@@ -117,6 +119,13 @@ const Calendar = () => {
         </div>
         <div className="dates">{days}</div>
       </div>
+      {selectedDate && (
+        <TodoComponent
+          selectedDate={selectedDate}
+          tasks={tasks}
+          setTasks={setTasks}
+        />
+      )}
       {selectedDate && (
         <div className="todo-list">
           <h3>{selectedDate}</h3>

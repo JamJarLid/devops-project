@@ -18,8 +18,6 @@ function TodoComponent({ selectedDate, tasks, setTasks }) {
       ...prevTasks,
       { date: selectedDate, tasks: newTodoList },
     ]);
-    //setTodos((prevTodos) => [...prevTodos, newTodo]);
-    //console.log('Todo added!', todos);
   }
 
   function removeTodo(taskIndex) {
@@ -67,7 +65,7 @@ function TodoComponent({ selectedDate, tasks, setTasks }) {
 
   return (
     <div>
-      <h2>Todos</h2>
+      <h2 className="todo-title">Todos</h2>
       <ul>
         {getTasksForDate(selectedDate).map((task, index) => (
           <li key={index}>
@@ -79,7 +77,10 @@ function TodoComponent({ selectedDate, tasks, setTasks }) {
           </li>
         ))}
       </ul>
-      <button onClick={() => addTodo(['New Task 1', 'New Task 2'])}>
+      <button
+        className="todo-add-button"
+        onClick={() => addTodo(['New Task 1', 'New Task 2'])}
+      >
         Add New Todo
       </button>
     </div>

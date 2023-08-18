@@ -107,7 +107,8 @@ const Calendar = () => {
           {new Date().getFullYear()}
         </h2>
         <h2 className="calendar-time">
-          {new Date().getHours()}:{String(new Date().getMinutes()).padStart(2, '0')}
+          {new Date().getHours()}:
+          {String(new Date().getMinutes()).padStart(2, '0')}
         </h2>
       </div>
       <div className="calendar">

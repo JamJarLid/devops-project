@@ -23,7 +23,7 @@
 
 .calendar-todo h2 {
   font-style: normal;
-  font-weight: 600; 
+  font-weight: 600;
   font-size: 18px;
   cursor: default;
 }
@@ -87,7 +87,8 @@
 
 .empty-day:hover,
 .day:hover {
-  background-color: #f0f0f0;
+  background-color: #dcdcdc;
+  outline: black solid 1px;
 }
 
 .empty-day.selected,

@@ -9,6 +9,7 @@
 
 .todo-container h2 {
   margin-bottom: 10px;
+  margin-left: 20px;
 }
 
 .todo-container ul {
@@ -34,4 +35,12 @@
 
 .todo-container button:hover {
   background-color: #45a049;
+}
+
+.todo-title {
+  margin-left: 40px;
+}
+
+.todo-add-button {
+  margin-left: 40px;
 }

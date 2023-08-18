@@ -94,7 +94,6 @@ const Calendar = () => {
       >
         <div className="day-number">{i}</div>
         <div className="task-count">{taskList.length}</div>
-        <button onClick={() => addTodo(dateFull, [])}>A</button>
       </div>
     );
   }

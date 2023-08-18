@@ -3,7 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  background-color: hsl(79, 12%, 58%);
+  background-color: whitesmoke;
   align-items: stretch;
   padding: 20px;
 }
@@ -26,6 +26,12 @@
   font-weight: 600; 
   font-size: 18px;
   cursor: default;
+}
+
+.calendar {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto 80px auto;
 }
 
 .header {
@@ -62,7 +68,7 @@
 .empty-day,
 .day {
   font-size: 1.5rem;
-  border: 1px solid #000000;
+  outline: black solid 1px;
   cursor: pointer;
   height: 8rem;
   padding: 0.3rem;
@@ -151,7 +157,6 @@
 
   .calendarTodo {
     width: 100%;
-    padding: 3% 6%;
   }
 
   .calendarTodo h2 {

@@ -58,6 +58,12 @@
   text-align: center;
   padding: 5px 0;
   cursor: default;
+  height: 40px;
+  outline: black solid 1px;
+}
+
+.weekday {
+  margin: auto;
 }
 
 .dates {

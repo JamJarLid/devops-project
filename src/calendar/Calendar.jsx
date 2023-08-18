@@ -77,7 +77,7 @@ const Calendar = () => {
   const currentYear = date.getFullYear();
 
   const daysInMonth = new Date(currentYear, date.getMonth() + 1, 0).getDate();
-  const firstDayOfMonth = new Date(currentYear, date.getMonth(), 1).getDay();
+  const firstDayOfMonth = new Date(currentYear, date.getMonth(), 0).getDay();
 
   const days = [];
   for (let i = 0; i < firstDayOfMonth; i++) {
@@ -104,7 +104,7 @@ const Calendar = () => {
       <div className="calendar-todo">
         <h2 className="calendar-day">{weekDays[new Date().getDay()]}</h2>
         <h2 className="calendar-date">
-          {new Date().getDate()}/{new Date().getMonth()}/
+          {new Date().getDate()}/{new Date().getMonth() + 1}/
           {new Date().getFullYear()}
         </h2>
         <h2 className="calendar-time">

@@ -61,13 +61,23 @@ const Calendar = () => {
     'November',
     'December',
   ];
-  const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  const weekDaysShort = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+  const weekDays = [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday',
+  ];
 
   const currentMonth = months[date.getMonth()];
   const currentYear = date.getFullYear();
 
   const daysInMonth = new Date(currentYear, date.getMonth() + 1, 0).getDate();
-  const firstDayOfMonth = new Date(currentYear, date.getMonth(), 1).getDay();
+  const firstDayOfMonth = new Date(currentYear, date.getMonth(), 0).getDay();
 
   const days = [];
   for (let i = 0; i < firstDayOfMonth; i++) {
@@ -84,7 +94,6 @@ const Calendar = () => {
       >
         <div className="day-number">{i}</div>
         <div className="task-count">{taskList.length}</div>
-        <button onClick={() => addTodo(dateFull, [])}>A</button>
       </div>
     );
   }
@@ -92,13 +101,12 @@ const Calendar = () => {
   return (
     <div className="calendar-container">
       <div className="calendar-todo">
-        <h2>{weekDays[new Date().getDay()]}</h2>
-        <br />
-        <h2>
-          {new Date().getDate()}/{months[new Date().getMonth()]}/
+        <h2 className="calendar-day">{weekDays[new Date().getDay()]}</h2>
+        <h2 className="calendar-date">
+          {new Date().getDate()}/{new Date().getMonth() + 1}/
           {new Date().getFullYear()}
         </h2>
-        <h2>
+        <h2 className="calendar-time">
           {new Date().getHours()}:{new Date().getMinutes()}
         </h2>
       </div>
@@ -111,7 +119,7 @@ const Calendar = () => {
           <button onClick={setNextMonth}>&gt;</button>
         </div>
         <div className="days">
-          {weekDays.map((day) => (
+          {weekDaysShort.map((day) => (
             <div className="weekday" key={day}>
               {day}
             </div>

@@ -5,7 +5,7 @@ export const initialTodos = [
 ];
 
 // Function for adding a new todo
-function addTodo(newTodoList) {
+export function addTodo(newTodoList) {
   const newId = initialTodos.length + 1;
   const newTodo = { id: newId, list: newTodoList };
   initialTodos.push(newTodo);
@@ -13,21 +13,36 @@ function addTodo(newTodoList) {
 }
 
 // Function for removing a todo by id
-function removeTodo(id) {
-  initialTodos = initialTodos.filter((todo) => todo.id !== id);
-  console.log('Todo removed with id:', id);
+export function removeTodo(date, taskIndex) {
+  const task = initialTodos.find((taskObj) => taskObj.date === date);
+  if (task) {
+    task.tasks.splice(taskIndex, 1);
+    console.log('Todo removed:', task);
+  } else {
+    console.log('Task not found for date:', date);
+  }
+  //initialTodos = initialTodos.filter((todo) => todo.id !== id);
+  //console.log('Todo removed with id:', id);
 }
 
 // Function for updating a todo by id
-function updateTodo(id, newTodoList) {
-  const todoIndex = initialTodos.findIndex((todo) => todo.id === id);
-  if (todoIndex !== -1) {
+export function updateTodo(date, taskIndex, updatedTask) {
+  const task = initialTodos.find((taskObj) => taskObj.date === date);
+  if (task) {
+    task.tasks[taskIndex] = updatedTask;
+    console.log('Todo updated:', task);
+  } else {
+    console.log('Task not found for date:', date);
+  }
+}
+// const todoIndex = initialTodos.findIndex((todo) => todo.id === id);
+/* if (todoIndex !== -1) {
     initialTodos[todoIndex].list = newTodoList;
     console.log('Todo updated:', initialTodos[todoIndex]);
   } else {
     console.log('Todo not found with id:', id);
   }
-}
+}*/
 
 // Testing the functions
 /*addTodo(['New Task 1', 'New Task 2']);

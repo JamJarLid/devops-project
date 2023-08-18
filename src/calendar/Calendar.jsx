@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './calendar.css';
 import TodoComponent from '../todo/todo.jsx';
-import { initialTodos } from '../todo/todo.js';
+import { initialTodos, removeTodo, updateTodo } from '../todo/todo.js';
 
 const Calendar = () => {
   const [date, setDate] = useState(new Date());
@@ -131,7 +131,22 @@ const Calendar = () => {
           <h3>{selectedDate}</h3>
           <ul>
             {getTasksForDate(selectedDate).map((task, index) => (
-              <li key={index}>{task}</li>
+              <li key={index}>
+                {task}
+                <button onClick={() => removeTodo(selectedDate, index)}>
+                  Remove
+                </button>
+                <button
+                  onClick={() =>
+                    updateTodo(selectedDate, index, [
+                      'Updated Task 1',
+                      'Updated Task 2',
+                    ])
+                  }
+                >
+                  Update
+                </button>
+              </li>
             ))}
           </ul>
           <div className="add-task">

@@ -4,38 +4,27 @@ import './todo.css';
 function TodoComponent({ selectedDate, tasks, setTasks }) {
   const [todos, setTodos] = useState([]);
 
-  function getTasksForDate(date) {
+    const addTodo = (date, taskList) => {
+    setTasks((prevTasks) => [...prevTasks, { date, tasks: taskList }]);
+  };
+
+  const getTasksForDate = (date) => {
     const task = tasks.find((task) => task.date === date);
     return task ? task.tasks : [];
-  }
+  };
 
-  function addTodo(newTodoList) {
-    const newTodo = {
-      id: Date.now(),
-      list: newTodoList,
-    };
-    setTasks((prevTasks) => [
-      ...prevTasks,
-      { date: selectedDate, tasks: newTodoList },
-    ]);
-  }
+  const addTo = () => {
+    if (taskInput.trim() !== '' && selectedDate) {
+      const updatedTasks = tasks.map((task) =>
+        task.date === selectedDate
+          ? { date: selectedDate, tasks: [...task.tasks, taskInput] }
+          : task
+      );
 
-  function removeTodo(taskIndex) {
-    const updatedTasks = tasks.map((taskObj) => {
-      if (taskObj.date === selectedDate) {
-        return {
-          ...taskObj,
-          tasks: taskObj.tasks.filter((_, index) => index !== taskIndex),
-        };
-      }
-      return taskObj;
-    });
-
-    setTasks(updatedTasks);
-    //const updatedTodos = todos.filter((todo) => todo.id !== id);
-    //setTodos(updatedTodos);
-    //console.log('Todo removed!', updatedTodos);
-  }
+      setTasks(updatedTasks);
+      setTaskInput('');
+    }
+  };
 
   function updateTodo(taskIndex, updatedTask) {
     const updatedTasks = tasks.map((taskObj) => {
@@ -77,12 +66,20 @@ function TodoComponent({ selectedDate, tasks, setTasks }) {
           </li>
         ))}
       </ul>
-      <button
+      <div className="add-task">
+            <input
+              type="text"
+              value={taskInput}
+              onChange={(e) => setTaskInput(e.target.value)}
+            />
+            <button onClick={addTodo}>Add Task</button>
+          </div>
+      {/* <button
         className="todo-add-button"
         onClick={() => addTodo(['New Task 1', 'New Task 2'])}
       >
         Add New Todo
-      </button>
+      </button> */}
     </div>
   );
 }

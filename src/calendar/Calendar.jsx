@@ -103,12 +103,10 @@ const Calendar = () => {
       <div className="calendar-todo">
         <h2 className="calendar-day">{weekDays[date.getDay()]}</h2>
         <h2 className="calendar-date">
-          {date.getDate()}/{date.getMonth() + 1}/
-          {date.getFullYear()}
+          {date.getDate()}/{date.getMonth() + 1}/{date.getFullYear()}
         </h2>
         <h2 className="calendar-time">
-          {date.getHours()}:
-          {String(date.getMinutes()).padStart(2, '0')}
+          {date.getHours()}:{String(date.getMinutes()).padStart(2, '0')}
         </h2>
       </div>
       <div className="calendar">
@@ -128,15 +126,15 @@ const Calendar = () => {
         </div>
         <div className="dates">{days}</div>
       </div>
-      <div className='todo-container'>
-      {selectedDate && (
-        <TodoComponent
-          selectedDate={selectedDate}
-          tasks={tasks}
-          setTasks={setTasks}
-        />
-      )}
-       {/* {selectedDate && (
+      <div className="todo-container">
+        {selectedDate && (
+          <TodoComponent
+            selectedDate={selectedDate}
+            tasks={tasks}
+            setTasks={setTasks}
+          />
+        )}
+        {/* {selectedDate && (
         <div className="todo-list">
           <h3>{selectedDate}</h3>
           <ul>

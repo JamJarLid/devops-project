@@ -4,7 +4,7 @@ import './todo.css';
 function TodoComponent({ selectedDate, tasks, setTasks }) {
   const [todos, setTodos] = useState([]);
 
-    const addTodo = (date, taskList) => {
+  const addTodo = (date, taskList) => {
     setTasks((prevTasks) => [...prevTasks, { date, tasks: taskList }]);
   };
 
@@ -67,13 +67,13 @@ function TodoComponent({ selectedDate, tasks, setTasks }) {
         ))}
       </ul>
       <div className="add-task">
-            <input
-              type="text"
-              value={taskInput}
-              onChange={(e) => setTaskInput(e.target.value)}
-            />
-            <button onClick={addTodo}>Add Task</button>
-          </div>
+        <input
+          type="text"
+          value={taskInput}
+          onChange={(e) => setTaskInput(e.target.value)}
+        />
+        <button onClick={addTodo}>Add Task</button>
+      </div>
       {/* <button
         className="todo-add-button"
         onClick={() => addTodo(['New Task 1', 'New Task 2'])}

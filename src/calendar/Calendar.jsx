@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './calendar.css';
 import TodoComponent from '../todo/todo.jsx';
-import { initialTodos, removeTodo, updateTodo } from '../todo/todo.js';
+import { initialTodos } from '../todo/todo.js';
 
 const Calendar = () => {
   const [date, setDate] = useState(new Date());

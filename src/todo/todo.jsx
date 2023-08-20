@@ -73,13 +73,18 @@ function TodoComponent({ selectedDate, tasks, setTasks }) {
           <li key={index}>
             {task}
             <button onClick={() => removeTodo(index)}>Remove</button>
-            <button onClick={() => updateTodo(index, 'Updated Task')}>
+            <button onClick={() => {
+              const updatedTask = prompt("Enter updated task:");
+              if (updatedTask) {
+                updateTodo(index, updatedTask);
+              }
+            }}>
               Update
             </button>
           </li>
         ))}
       </ul>
-      <button onClick={() => addTodo(['New Task 1', 'New Task 2'])}>
+      <button onClick={() => addTodo(['Meditate', 'Daily standups'])}>
         Add New Todo
       </button>
     </div>

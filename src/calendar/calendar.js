@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './calendar.css';
+import { addTodo, removeTodo, updateTodo } from '../todo/todo.js';
 
 const Calendar = () => {
+  const [tasks, setTasks] = useState([...initialTodos]);
   // Function to add a new todo
   const addTodo = (date, task) => {
     const updatedTasks = tasks.map((taskObj) => {

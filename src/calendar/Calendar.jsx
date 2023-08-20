@@ -107,7 +107,8 @@ const Calendar = () => {
           {new Date().getFullYear()}
         </h2>
         <h2 className="calendar-time">
-          {new Date().getHours()}:{new Date().getMinutes()}
+          {new Date().getHours()}:
+          {String(new Date().getMinutes()).padStart(2, '0')}
         </h2>
       </div>
       <div className="calendar">
@@ -139,7 +140,22 @@ const Calendar = () => {
           <h3>{selectedDate}</h3>
           <ul>
             {getTasksForDate(selectedDate).map((task, index) => (
-              <li key={index}>{task}</li>
+              <li key={index}>
+                {task}
+                <button onClick={() => removeTodo(selectedDate, index)}>
+                  Remove
+                </button>
+                <button
+                  onClick={() =>
+                    updateTodo(selectedDate, index, [
+                      'Updated Task 1',
+                      'Updated Task 2',
+                    ])
+                  }
+                >
+                  Update
+                </button>
+              </li>
             ))}
           </ul>
           <div className="add-task">

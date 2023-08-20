@@ -66,20 +66,12 @@ function TodoComponent({ selectedDate, tasks, setTasks }) {
           </li>
         ))}
       </ul>
-      <div className="add-task">
-        <input
-          type="text"
-          value={taskInput}
-          onChange={(e) => setTaskInput(e.target.value)}
-        />
-        <button onClick={addTodo}>Add Task</button>
-      </div>
-      {/* <button
+      <button
         className="todo-add-button"
         onClick={() => addTodo(['New Task 1', 'New Task 2'])}
       >
         Add New Todo
-      </button> */}
+      </button>
     </div>
   );
 }

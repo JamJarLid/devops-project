@@ -134,7 +134,7 @@ const Calendar = () => {
             setTasks={setTasks}
           />
         )}
-        {/* {selectedDate && (
+        {selectedDate && (
         <div className="todo-list">
           <h3>{selectedDate}</h3>
           <ul>
@@ -166,7 +166,7 @@ const Calendar = () => {
             <button onClick={addTask}>Add Task</button>
           </div>
         </div>
-        )} */}
+        )}
       </div>
     </div>
   );

@@ -21,7 +21,6 @@ export function removeTodo(date, taskIndex) {
   } else {
     console.log('Task not found for date:', date);
   }
-  
 }
 
 // Function for updating a todo by id
@@ -34,5 +33,3 @@ export function updateTodo(date, taskIndex, updatedTask) {
     console.log('Task not found for date:', date);
   }
 }
-  
-

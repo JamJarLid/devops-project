@@ -20,10 +20,7 @@ Then('It should read {string} in the todo list', (task) => {
 });
 
 When('I click the {string} button on the {string} todo', (action, task) => {
-  cy.get('button')
-    .parent('li').contains(task)
-    .contains(action)
-    .click();
+  cy.get('button').parent('li').contains(task).contains(action).click();
 });
 
 Then('It should remove {string} from the todo list', (task) => {
@@ -31,7 +28,7 @@ Then('It should remove {string} from the todo list', (task) => {
 });
 
 When('I update the todo from {string} to {string}', (task, newtask) => {
-  cy.window().then(win => {
+  cy.window().then((win) => {
     cy.get('button').parent('li').contains(task).contains('Update').click();
     cy.stub(win, 'prompt').returns(newtask);
   });

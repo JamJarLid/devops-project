@@ -5,11 +5,12 @@ Given('That I am on the calendar page', () => {
 });
 
 When('I click on the {string} box', (day) => {
-  cy.get('div.day').contains(day).trigger('click');
+  cy.get('div.day').contains('3').click();
+  cy.get('div.day').contains(day).click();
 });
 
 When('I add {string} to the todo list', (task) => {
-  cy.get('button').contains('Add New Todo').trigger('click');
+  cy.get('button').contains('Add New Todo').click();
   cy.get('input').parent('div.add-task').type(task);
   cy.get('button').contains('Add Task').click();
 });

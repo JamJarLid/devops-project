@@ -19,13 +19,20 @@ Then('It should read {string} in the todo list', (task) => {
   cy.get('li').contains(task).should('exist');
 });
 
-When('I click the remove button on the {string} todo', (task) => {
+When('I click the {string} button on the {string} todo', (action, task) => {
   cy.get('button')
     .parent('li').contains(task)
-    .contains('Remove')
+    .contains(action)
     .click();
 });
 
 Then('It should remove {string} from the todo list', (task) => {
   cy.get('li').contains(task).should('not.exist');
+});
+
+When('I update the todo from {string} to {string}', (task, newtask) => {
+  cy.window().then(win => {
+    cy.get('button').parent('li').contains(task).contains('Update').click();
+    cy.stub(win, 'prompt').returns(newtask);
+  });
 });
